@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { db } from '../../../lib/db'; // Pastikan path ini sama dengan file route.js yang lain
 
+export const dynamic = 'force-dynamic';
+console.log("Pancingan update Vercel");
+
 export async function POST(request) {
   try {
     const body = await request.json();

@@ -24,8 +24,10 @@ export default function Login() {
       if (data.status === 'success') {
         // Simpan Karcis (Token) ke brankas browser
         localStorage.setItem('token', data.data.token);
-        // Pindah ke halaman Dashboard
+        
+        // Memaksa browser melakukan refresh halaman dashboard agar data dari Railway langsung ditarik segar
         router.push('/dashboard'); 
+        router.refresh(); 
       } else {
         setError(data.message);
       }
